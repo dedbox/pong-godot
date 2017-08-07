@@ -1,5 +1,8 @@
 extends Node2D
 
+export var courtColor = Color(0, 0, 0)
+export var goalColor = Color(0.5, 0.5, 0.5)
+
 var size
 var aspect
 
@@ -11,11 +14,9 @@ func _ready():
 func _draw():
 	var W = size.width - 1
 	var H = size.height - 1
-	var C = Color(1.0, 1.0, 1.0)
-	draw_line(Vector2(0, 1), Vector2(W, 1), C)
-	draw_line(Vector2(0, H), Vector2(W, H), C)
-	draw_line(Vector2(1, 0), Vector2(1, H), C)
-	draw_line(Vector2(W, 0), Vector2(W, H), C)
+	draw_rect(Rect2(1, 1, size.width, size.height), courtColor)
+	draw_rect(Rect2(0, 0, 60, size.height), goalColor)
+	draw_rect(Rect2(size.width - 60, 0, size.width, size.height), goalColor)
 
 func _input(ev):
 	if ev.type == InputEvent.MOUSE_MOTION:
