@@ -21,5 +21,5 @@ func _draw():
 
 func _input(ev):
 	if ev.type == InputEvent.MOUSE_MOTION:
-		get_node("left-paddle").move_to(ev.pos.y, height)
-		get_node("right-paddle").move_to(ev.pos.x, width, aspect)
+		get_node("left/paddle").move_to(ev.pos.y, height)
+		get_node("right/paddle").move_to(ev.pos.x, width, aspect)

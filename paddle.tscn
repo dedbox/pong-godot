@@ -16,13 +16,17 @@ transform/pos = Vector2( 315, 195 )
 script/script = ExtResource( 2 )
 color = Color( 0.964706, 0.92549, 0.941176, 1 )
 
-[node name="left-paddle" type="Node2D" parent="."]
+[node name="left" type="Node2D" parent="."]
+
+[node name="paddle" type="Node2D" parent="left"]
 
 transform/pos = Vector2( 65, 170 )
 script/script = ExtResource( 3 )
 color = Color( 0.199216, 0.270833, 0.375, 1 )
 
-[node name="right-paddle" type="Node2D" parent="."]
+[node name="right" type="Node2D" parent="."]
+
+[node name="paddle" type="Node2D" parent="right"]
 
 transform/pos = Vector2( 565, 170 )
 script/script = ExtResource( 3 )

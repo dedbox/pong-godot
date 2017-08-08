@@ -31,11 +31,11 @@ func try_collide_wall(delta):
 	
 # flip, change direction, and increase speed when touching paddles
 func try_collide_paddles():
-	try_collide_paddle("left-paddle", -1)
-	try_collide_paddle("right-paddle", 1)
+	try_collide_paddle("../left/paddle", -1)
+	try_collide_paddle("../right/paddle", 1)
 
 func try_collide_paddle(name, I):
-	var paddle_rect = Rect2(get_parent().get_node(name).get_pos(), Vector2(10, 60))
+	var paddle_rect = Rect2(get_node(name).get_pos(), Vector2(10, 60))
 	var ball_rect = Rect2(pos - Vector2(5, 5), Vector2(10, 10))
 	if paddle_rect.intersects(ball_rect) and direction.x * I > 0:
 		direction.x = -direction.x
